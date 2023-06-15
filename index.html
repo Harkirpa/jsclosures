@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    background-image: linear-gradient(lightblue,darkblue,lightblue);
+}
+pre{
+    font-weight: bolder;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+   <h1>Closures</h1>
+    <pre>1.function counter(){
+        var counter=0;
+    
+      function  IncreaseCounter(){
+             return counter+=1;
+      };  
+      return IncreaseCounter;
+    }
+    var counter=counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());</pre>
+    <img src="./3.png">
+    <img src="./6.png">
+    <img src="./7.png">
+    <img src="./8.png">
+    <hr>
+    <pre>2.let count=0;
+        (function(){
+            if(count ===0){
+             let count=1;
+              console.log(count);
+        }
+        console.log(count);
+        
+        })();</pre>
+        <img src="./1.png">
+        <hr>
+        <pre>3.for(var i=0; i<3 ;i++)
+            {
+                setTimeout(function log(){
+                console.log(i)
+                },1000);
+             } </pre>
+             <img src="./2.png">
+            <hr>
+        <h3>4.Area Of Rectangle</h3>
+        <pre>function calculateRectangleArea(length) {
+            function innerFunction(breadth) {
+              return length * breadth;
+            }
+          
+            return innerFunction;
+          }
+          
+          // output// 
+          const rectangleArea = calculateRectangleArea(9); // Outer function is called with the length parameter
+          const area = rectangleArea(15); // Inner function is called with the breadth parameter
+          console.log(area);</pre>
+          <img src="./12.png">
+        <hr>
+        <h3>5.Counter</h3>
+        <pre>Take a variable in outer function and create an inner function to increase 
+            the counter every time it is called</pre>
+            <img src="./15.png">
+        <hr>
+        <pre>6.var a=12;
+            (function(){
+                alert(a);
+            })();</pre>
+            <img src="./10.png">
+            <hr>
+            <pre>7.var a=10;
+                var x=(function(){
+                    var a=12;
+                    return function(){
+                        alert(a);
+                    };
+                })();
+                x();</pre>
+                <img src="./10.png">
+                <pre>8."var globalVar = ""xyz"";
+
+                    (function outerFunc(outerArg) {
+                        var outerVar = 'a';
+                        
+                        (function innerFunc(innerArg) {
+                        var innerVar = 'b';
+                        
+                        console.log(
+                            ""outerArg = "" + outerArg + ""\n"" +
+                            ""innerArg = "" + innerArg + ""\n"" +
+                            ""outerVar = "" + outerVar + ""\n"" +
+                            ""innerVar = "" + innerVar + ""\n"" +
+                            ""globalVar = "" + globalVar);
+                        
+                        })(456);
+                    })(123);"</pre>
+                    <img src="./14.png">
+    <script src="script.js"></script>
+</body>
+</html>
